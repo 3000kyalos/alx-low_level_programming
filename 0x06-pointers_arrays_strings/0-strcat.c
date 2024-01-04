@@ -3,8 +3,7 @@
 /**
  * _strcat - concatenates strings
  * @dest: first string
- * @src: seconf string
- * main - uses built in function
+ * @src: second string
  *
  * Return: concatenated string
  */

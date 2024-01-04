@@ -11,9 +11,10 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
+	int i;
 	char *temp = dest;
 
-	for (; *src != '\0'; src++)
+	for (i = 0; i < n && *src != '\0'; temp++, src++)
 	{
 		*temp = *src;
 	}

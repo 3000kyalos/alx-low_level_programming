@@ -6,7 +6,7 @@
  * @s: string
  * @c: character to be located
  *
- * Return: c if located otherwise return NULL
+ * Return: c
  */
 char *_strchr(char *s, char c)
 {

@@ -1,7 +1,6 @@
 #include "main.h"
 
 /**
- * _sqrt_recursion - returns the natural square root of a number
  * _sqrt_recursion_helper - calculates the square root of a number
  * @n: number to find the square root
  * @guess: keeps track of the current guess for the square root
@@ -25,6 +24,12 @@ int _sqrt_recursion_helper(int n, int guess)
 	}
 }
 
+/**
+ * _sqrt_recursion - returns the natural square root of a number
+ * @n: number input
+ *
+ * Return: square root of a number, -1 otherwise
+ */
 int _sqrt_recursion(int n)
 {
 	if (n < 0)

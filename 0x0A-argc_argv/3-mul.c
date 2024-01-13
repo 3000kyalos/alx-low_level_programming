@@ -16,11 +16,11 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		fprintf(stderr, "Error\n");
+		printf("Error\n");
 		return (1);
 	}
-	x = atoi(argv[1]);
-	y = atoi(argv[2]);
+	x = strtol(argv[1], 0, 10);
+	y = strtol(argv[2], 0, 10);
 	mul = x * y;
 
 	printf("%d\n", mul);

@@ -18,8 +18,8 @@ char *create_array(unsigned int size, char c)
 
 	if (arr == NULL)
 	{
-		fprintf(stderr, "Memory allocation failed\n");
-		exit(1);
+		printf("failed to allocate memory\n");
+		exit (1);
 	}
 	for (i = 0; i < size; i++)
 	{

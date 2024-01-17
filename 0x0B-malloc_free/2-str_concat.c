@@ -21,9 +21,17 @@ char *str_concat(char *s1, char *s2)
 	{
 		s1 = "";
 	}
+	else
+	{
+		for (; s1[s1_Len]; s1_Len++);
+	}
 	if (s2 == NULL)
 	{
 		s2 = "";
+	}
+	else
+	{
+		for (; s2[s2_Len]; s2_Len++);
 	}
 	while (s1[s1_Len] != '\0')
 	{

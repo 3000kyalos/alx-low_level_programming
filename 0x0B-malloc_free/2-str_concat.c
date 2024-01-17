@@ -14,19 +14,39 @@
 char *str_concat(char *s1, char *s2)
 {
 	char *result;
+	int s1_Len, s2_Len;
+	int i, j;
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return (NULL);
+		s1 = "";
 	}
-	result = (char *)malloc(strlen(s1) + strlen(s2) + 1);
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
+	while (s1[s1_Len] != '\0')
+	{
+		s1_Len++;
+	}
+	while (s2[s2_Len] != '\0')
+	{
+		s2_Len++;
+	}
+	result = (char *)malloc((s1_Len + s2_Len + 1) * sizeof(char));
 
 	if (result == NULL)
 	{
-		printf("failed to allocate memory\n");
-		exit(1);
+		return (NULL);
 	}
-	strcpy(result, s1);
-	strcat(result, s2);
+	for (i = 0; i < s1_Len; i++)
+	{
+		result[i] = s1[i];
+	}
+	for (j = 0; j < s2_Len; j++, i++)
+	{
+		result[i] = s2[j];
+	}
+	result[i] = '\0';
 	return (result);
 }

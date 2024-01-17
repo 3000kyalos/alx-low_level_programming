@@ -23,7 +23,8 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		for (; s1[s1_Len]; s1_Len++);
+		for (; s1[s1_Len]; s1_Len++)
+			;
 	}
 	if (s2 == NULL)
 	{
@@ -31,16 +32,11 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		for (; s2[s2_Len]; s2_Len++);
+		for (; s2[s2_Len]; s2_Len++)
+			;
 	}
-	while (s1[s1_Len] != '\0')
-	{
-		s1_Len++;
-	}
-	while (s2[s2_Len] != '\0')
-	{
-		s2_Len++;
-	}
+	s2_Len++;
+
 	result = (char *)malloc((s1_Len + s2_Len + 1) * sizeof(char));
 
 	if (result == NULL)

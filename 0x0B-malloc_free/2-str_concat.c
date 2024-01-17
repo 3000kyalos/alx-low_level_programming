@@ -15,7 +15,6 @@ char *str_concat(char *s1, char *s2)
 {
 	char *result;
 	int s1_Len, s2_Len;
-	int i, j;
 
 	if (s1 == NULL)
 	{
@@ -41,16 +40,10 @@ char *str_concat(char *s1, char *s2)
 
 	if (result == NULL)
 	{
-		return (NULL);
+		fprintf(stderr, "failed to allocate memory");
+		exit(1);
 	}
-	for (i = 0; i < s1_Len; i++)
-	{
-		result[i] = s1[i];
-	}
-	for (j = 0; j < s2_Len; j++, i++)
-	{
-		result[i] = s2[j];
-	}
-	result[i] = '\0';
+	strcpy(result, s1);
+	strcat(result, s2);
 	return (result);
 }

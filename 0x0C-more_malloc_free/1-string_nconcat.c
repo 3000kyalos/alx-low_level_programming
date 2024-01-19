@@ -22,12 +22,12 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (s1 == NULL)
 		s1 = "";
 	else
-		for (; s1[s1_Len]; s1_Len++)
+		for (s1_Len = 0; s1[s1_Len]; s1_Len++)
 			;
 	if (s2 == NULL)
 		s2 = "";
 	else
-		for (; s2[s2_Len]; s2_Len++)
+		for (s2_Len = 0; s2[s2_Len]; s2_Len++)
 			;
 	if (n >= s2_Len)
 		n = s2_Len;
@@ -37,13 +37,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (ptr == NULL)
 		return (NULL);
 
-	for (i = 0; i < (s1_Len + n); i++)
+	for (i = 0; i < n; i++)
 	{
-		if (i < s1_Len)
-			ptr[i] = s1[i];
-		else
-			ptr[i] = s2[i - s1_Len];
+		ptr[i] = s1[i];
 	}
-	ptr[i] = '\0';
+	for (i = 0; i < n; i++)
+	{
+		ptr[i + s1_Len] = s2[i];
+	}
+	ptr[s1_Len + n] = '\0';
 	return (ptr);
 }

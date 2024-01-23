@@ -1,5 +1,5 @@
-#ifndef dog
-#define dog
+#ifndef DOG_H
+#define DOG_H
 
 /**
  * struct dog - structure with elements name, age, owner
